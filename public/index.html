@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Lato:400,700|IBM+Plex+Sans:400,700|Roboto:400,700">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quién es ese pokemon?</title>
+    <script src="./sketch-solemne_1.js"></script>
+
+    <!-- // window.pokemonUI.api = window.pokemonUI.api
+        // window.pokemonUI.api["pokedex"] = "https://www.pokemon.com/el/api/pokedex/"
+        // window.pokemonUI.api = window.pokemonUI.api || {}
+        // window.pokemonUI.api["pokedex"] = "https://www.pokemon.com/el/api/pokedex/"
+        // window.pokemonUI.dictionary = window.pokemonUI.dictionary || {}
+        // window.pokemonUI.dictionary["numberPrefix"] = "N.°&nbsp;"
+        // window.pokemonUI.dictionary.type = {
+        //     "ghost": "Fantasma",
+        //     "dark": "Siniestro",
+        //     "electric": "Eléctrico",
+        //     "normal": "Normal",
+        //     "fire": "Fuego",
+        //     "psychic": "Psíquico",
+        //     "flying": "Volador",
+        //     "steel": "Acero",
+        //     "poison": "Veneno",
+        //     "dragon": "Dragón",
+        //     "water": "Agua",
+        //     "ice": "Hielo",
+        //     "rock": "Roca",
+        //     "fighting": "Lucha",
+        //     "grass": "Planta",
+        //     "bug": "Bicho",
+        //     "ground": "Tierra",
+        //     "fairy": "Hada"
+        // }
+        // window.pokemonUI.dictionary.filters = {
+        //     "height": "Altura",
+        //     "type":"Tipo",
+        //     "weakness": "Debilidad",
+        //     "weight": "Peso"
+        // } -->
+
+    <style>
+        body {
+            background-color: #f0f2f2;
+            margin: 0px;
+            display: flex;
+            width: 1440px;
+            height: 1024px;
+            padding: 20px;
+            align-items: flex-start;
+            grid-gap: 10px;
+
+        }
+
+        h1 {
+            font-family: 'Roboto', sans-serif;
+            font-style: normal;
+            font-size: 48px;
+            font-weight: 500;
+            line-height: normal;
+            width: 360px;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <section id="page">
+        <header class="container pokedex">
+            <section class="title">
+                <!-- ::before -->
+                <div class="column-6 push-1">
+                    <h1 class="Título principal">
+                        <div style= "width:800px; height: 94px; padding-top: 21px; padding-bottom: 21px; padding-left: 23px; padding-right: 23px; border: 0.50px; justify-content: flex-start; align-items: flex-start; gap: 19px; display: inline-flex">
+                            <img alt="pokeball" src="https://w7.pngwing.com/pngs/57/434/png-transparent-8-bit-pokemon-pixel-art-poke-ball-others-rectangle-bitcoin-pokemon.png" img style="height: 57px; width: 97px;">
+                            ¿Quién es ese Pokémon?
+                            <img alt="pokeball" src="https://w7.pngwing.com/pngs/57/434/png-transparent-8-bit-pokemon-pixel-art-poke-ball-others-rectangle-bitcoin-pokemon.png" img style="height: 57px; width: 97px;">
+                    </h1>
+                </div>
+                <div class="column-6 push-7">
+                </div>
+                <!-- ::after -->
+            </section>
+        </header>
+
+        <nav>
+            <div class="container buscador">
+                <div style="width: 1000px; height: 900px; position: relative; background: white; border: 0.5px rgba(170, 170, 170, 0.2) solid; padding-top: 21px; padding-left: 21px; padding-left: 23px; padding-bottom: 21px;">
+                <section class="Filtro">
+                    <div class="column-6 push-1">
+                        <div class="Texto del filtro1"
+                            style=" color: black; width: 450px; height: 42px; font-size: 32px; font-family: IBM Plex Sans; font-weight: 500; word-wrap: break-word">
+                            <label> Nombre o Número</label>
+                        </div>
+                    </div>
+                    <div class="column-6 push-7">
+                    </div>
+                </section>
+                <form method="post" action="Pokedex">
+                    <input type="text" name="pokemon"
+                        style="width: 340px; height: 60px; left: 41px; top: 70px; background: #F4F4F4; border-radius: 12px; border: 0.25px rgb(125, 125, 125) solid">
+                    <input type="number" name="numberPrefix"
+                        style="width: 340px; height: 60px; left: 41px; top: 70px; background: #f4f4f4; border: solid rgb(125, 125, 125) 0.25px; margin: 5px; border-radius: 12px;">
+                    <input type="submit" value="Acceder a la Pokedex"
+                        style="width: 218px; height: 35px; left: 0px; top: 0px; background-color:#ff9090; border-color: transparent; border-radius: 9px; font-family: IBM Plex Sans, sans-serif; font-size: 15px; font-style: normal; font-weight: 600;">
+                </form>
+                <div style="text-align: center;">
+                    <img class= "Snorlax-gif" style="width: 500px; height: 500px; left: 411px; top: 427px; padding-top: 50px;" src="https://i.pinimg.com/originals/83/0b/53/830b53f8bbd0e9dbcade87da95abdad0.gif" id="Snorlax-chilling">
+                    <p style="width: 700px; height: 80px; text-align:center; padding-left: 150px;font-family: Roboto; font-style: italic;"> Este es Snorlax, un pokémon de tipo normal. Tiene una apariencia amable y adorable, ¡además que es muy grande!. Al dormir, emana una energía que atrae a una gran variedad de pokemones para que se acurruquen y duerman con él.</p>
+                    <script src="./sketch-solemne_1.js"></script>
+                </div>
+                </div>
+            </div>
+
+        </nav>
+
+        <main></main>
+        <footer></footer>
+    </section>
+
+
+    </div>
+
+
+
+</body>
+
+</html>
